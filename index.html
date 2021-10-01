@@ -10,43 +10,54 @@
     <body>
         <div id="wrapper">
             <div class = "container">
-                <div class="top-row">
-                    <div class="region top-left"></div>
-                    <div class="region top-center"></div>
-                    <div class = "region top-right weather-box">
-                        <div></div>
-                        <div></div>
+                <div class = "top">
+                    <div class = "weather-box">
+                        <div class = "weather">                          
+                            <span class = "weather-icon"></span>
+                            <span class = "weather-data"></span>   
+                            
+                        </div>
+                        <div class = "city"></div>
                     </div>
                 </div>
-                <div class="region center-above"></div>
-                <div class="region center">
+                <div class="center-above"></div>
+                <div class="center">
                     <div class = "clock-box">
                         <span class="hour-minute"></span>
                         <span class="second"></span>
                     </div>
+                    <div class = "greeting-box">
+                        <form id="login-form" class="hidden">
+                            <input
+                                id = "login-input"
+                                required
+                                maxlength="15"
+                                type="text"
+                                placeholder="What is your name?"/>
+                        </form>
+                        <div>
+                            <div id="greet-box" class="hidden">
+                                <div id="greeting-id"></div>
+                                <div id="greeting-positive"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="region center-below"></div>
-                <div class = "todo-box">
-                    <h1>todo</h1>
-                </div>
-                
-                <div class = "greet-box">
-                    <form id="login-form" class="hidden">
-                        <input
-                            required
-                            maxlength="15"
-                            type="text"
-                            placeholder="What is your name?"/>
-                        <button>Log In</button>
-                    </form>
-                    <h1 id="greeting" class="hidden"></h1>  
-                </div>
-                
+                <div class="bottom">
+                    <div class = "shadow todo-box">
+                        <form id="todo-form">
+                            <h1>To Do List</h1>
+                            <input id = "todo-input" type="text" placeholder="Wirte a To Do and Press Enter" required/>
+                        </form>     
+                        <ul id="todo-list"></ul>                   
+                    </div>
+                </div>  
             </div>
         </div>  
         <script src="js/background.js"></script>    
         <script src="js/greetings.js"></script>
         <script src="js/clock.js"></script>
         <script src="js/weather.js"></script>
+        <script src="js/todo.js"></script>
     </body>
 </html>
