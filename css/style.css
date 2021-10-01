@@ -1,3 +1,97 @@
+html, body {
+    margin : 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+input[type="text"] {background:transparent; border:none; outline:none; border-bottom:2px solid rgba(255,255,255,.3); caret-color:#fff; transition:0.2s;}
+input[type="text"]::placeholder {color:rgba(255,255,255,.3);transition:0.2s;}
+input[type="text"]:hover,input[type="text"]:active,input[type="text"]:focus {border-color:rgba(255,255,255,1);}
+input[type="text"]:hover::placeholder,input[type="text"]:active::placeholder,input[type="text"]:focus::placeholder {color:rgba(255,255,255,1);}
+input[type="submit"] {background:transparent; border:2px solid #fff; color:#fff; transition:0.2s;}
+input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focus {cursor: pointer;}
+
+
+#wrapper {
+    padding: 2%;
+    width: 100%;
+    height: 100vh;
+    min-height: 1080px;
+    background-size: cover;
+    color: white;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+.top-row {
+    height: 60px;
+    display: flex;
+    align-items: flex-start;
+    flex: 0 0 auto;
+}
+.top-center, .top-left, .top-right {
+    position: relative;
+    display: inline-flex;
+    flex: 1 1 auto;
+}
+.top-left {
+    --max-height: 60px;
+    --side-padding: 8px;
+    height: 150px;
+    align-items: stretch;
+    flex-grow: 0;
+    flex-shrink: 100000000;
+}
+.top-center {
+    --icon-size: 32px;
+    justify-content: center;
+    flex-grow: 0;
+}
+.top-right {
+    min-width: 0;
+    text-align: right;
+}
+.top-right > div {
+    vertical-align:middle;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.center-above, .center-below {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.center-above {
+    height: 200px;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+}
 .hidden {
     display: none;
+}
+
+.clock-box {    
+    font-weight: bold;
+}
+.clock-box .hour-minute {
+    font-size: 150px;
+}
+.clock-box .second {
+    font-size: 50px;
 }
