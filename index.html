@@ -10,7 +10,7 @@
     <body>
         <div id="wrapper">
             <div class = "container">
-                <div class = "top">
+                <div class = "shadow top">
                     <div class = "weather-box">
                         <div class = "weather">                          
                             <span class = "weather-icon"></span>
@@ -22,9 +22,13 @@
                 </div>
                 <div class="center-above"></div>
                 <div class="center">
+                    <div class="shadow" style="width: 800px;">
                     <div class = "clock-box">
                         <span class="hour-minute"></span>
                         <span class="second"></span>
+                    </div>
+                    <div class="date-box">
+                        <span class="year-month-date-day"></span>
                     </div>
                     <div class = "greeting-box">
                         <form id="login-form" class="hidden">
@@ -37,10 +41,12 @@
                         </form>
                         <div>
                             <div id="greet-box" class="hidden">
-                                <div id="greeting-id"></div>
+                                <div id="greeting-id">
+                                </div>                                
                                 <div id="greeting-positive"></div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <div class="bottom">
@@ -50,8 +56,9 @@
                             <input id = "todo-input" type="text" placeholder="Wirte a To Do and Press Enter" required/>
                         </form>     
                         <ul id="todo-list"></ul>                   
-                    </div>
+                    </div>                    
                 </div>  
+                    
             </div>
         </div>  
         <script src="js/background.js"></script>    

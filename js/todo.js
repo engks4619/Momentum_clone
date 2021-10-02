@@ -37,20 +37,23 @@ function paintToDo(newTodo) {
     li.id = newTodo.id;
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.id = newTodo.id;
     if (newTodo.checkbox === true){
         checkbox.setAttribute("checked",true);
         li.classList.add("line-through");
     }else{
         li.classList.remove("line-through")
     }
+    const label = document.createElement("label");
+    label.htmlFor = newTodo.id;
     const span = document.createElement("span");
     span.innerText = newTodo.text;
-    checkbox.addEventListener("change",handleToDoCheckbox); 
-
+    checkbox.addEventListener("change",handleToDoCheckbox);     
     const button = document.createElement("button");    
     button.innerText = "X";
     button.addEventListener("click",deleteToDo);
     li.appendChild(checkbox);
+    li.appendChild(label);
     li.appendChild(span);
     li.appendChild(button);     
     toDoList.appendChild(li);
