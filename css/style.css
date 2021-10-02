@@ -57,7 +57,7 @@ input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focu
     text-align: center;
 }
 .center-above {
-    height: 300px;
+    height: 15%;
 }
 .center {
     display: flex;
@@ -126,12 +126,47 @@ input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focu
 
 .todo-box {
     min-width: 450px;
+    height: 400px;
 }
 
 #todo-form #todo-input {
     color: white;
     font-size: 25px;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     width: 400px;
+}
+#todo-form #todo-input::-webkit-input-placeholder {
+    text-align: center;
+}
+#todo-list{
+    list-style:none;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    overflow:scroll;
+    height: 230px;
+}
+#todo-list::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+}
+#todo-list input[type=checkbox]{
+    border-radius: 0.5vw;
+}
+#todo-list button{
+    margin-right: 10%;
+    border-radius: 0.3vw;
+    float: right;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+#todo-list button:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.line-through {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.6);
 }

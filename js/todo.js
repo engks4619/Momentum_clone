@@ -19,14 +19,38 @@ function deleteToDo(event) {
     
 }
 
+function toggleCheckBoxValue(toDo,id){
+    if (toDo.id === id) {
+        toDo.checkbox = toDo.checkbox? false : true;
+    }    
+}
+
+function handleToDoCheckbox(event){
+    const li = event.target.parentElement;
+    li.classList.toggle("line-through");
+    toDos.forEach(toDo => toggleCheckBoxValue(toDo, parseInt(li.id)));
+    saveToDos();
+}
+
 function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    if (newTodo.checkbox === true){
+        checkbox.setAttribute("checked",true);
+        li.classList.add("line-through");
+    }else{
+        li.classList.remove("line-through")
+    }
     const span = document.createElement("span");
-    span.innerText = newTodo.text; 
-    const button = document.createElement("button");      
-    button.innerText = "❌";
+    span.innerText = newTodo.text;
+    checkbox.addEventListener("change",handleToDoCheckbox); 
+
+    const button = document.createElement("button");    
+    button.innerText = "X";
     button.addEventListener("click",deleteToDo);
+    li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(button);     
     toDoList.appendChild(li);
@@ -37,6 +61,7 @@ function handleToDoSubmit(event) {
     const newTodo = toDoInput.value;
     toDoInput.value = "";
     const newTodoObj = {
+        checkbox:false,
         text:newTodo,
         id:Date.now()
     }
